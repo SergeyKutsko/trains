@@ -23,6 +23,21 @@ class TrainRoutesAnalitics
     build_graph
   end
 
+  def process
+    File.open(OUTPUT_FILE_NAME, 'w') do |f|
+      f.puts "Output #1: #{length_of_route('A-B-C')}"
+      f.puts "Output #2: #{length_between('A', 'D')}"
+      f.puts "Output #3: #{length_of_route('A-D-C')}"
+      f.puts "Output #4: #{length_of_route('A-E-B-C-D')}"
+      f.puts "Output #5: #{length_of_route('A-E-D')}"
+      f.puts "Output #6: #{all_trips_between_with_max_stops_count('C', 3)}"
+      f.puts "Output #7: #{all_trips_between_with_exact_stops_count('A-C', 4)}"
+      f.puts "Output #8: #{shortest_route('A-C')}"
+      f.puts "Output #9: #{shortest_route('B')['B']}"
+      f.puts "Output #10: #{all_looped_path_less_than_count('C', 30)}"
+    end
+  end
+
   def length_between(v1, v2)
     graph.length_between v1, v2
   end

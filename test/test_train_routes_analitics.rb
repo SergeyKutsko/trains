@@ -23,6 +23,13 @@ class TrainRoutesAnaliticsTest < Minitest::Test
   def test_graph_vertex_count
     assert_equal 5, @object.graph.count
   end
+
+  def test_process
+    @object.process
+    assert_equal true, File.exist?(TrainRoutesAnalitics::OUTPUT_FILE_NAME)
+    File.delete(TrainRoutesAnalitics::OUTPUT_FILE_NAME)
+  end
+
   # Output #1: 9
   def test_the_distance_of_the_route_A_B_C
     assert_equal 9, @object.length_of_route('A-B-C')
