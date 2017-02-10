@@ -70,7 +70,7 @@ module SearchRouteAlgorithms
           end
           vertices.delete nearest_vertex
         end
-        dst ? nil : distances
+        dst.nil? ? distances : dst
       end
     end
   end
