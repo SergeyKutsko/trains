@@ -1,5 +1,5 @@
 module SearchRouteAlgorithms
-  # Dijkstra Algorithm implementation
+  # Dijkstra Algorithm implementation original source https://gist.github.com/mathieugagne/6556780
   module Dijkstra
     # Edge class implementation
     class Edge
